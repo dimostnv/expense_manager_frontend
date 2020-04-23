@@ -1,0 +1,36 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  overflow-y: scroll;
+  background-color: #225b63;
+  font-family: "Helvetica", sans-serif;
+  color: darkgrey;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+.App-header {
+  min-width: 100%;
+}
+
+.App-content {
+  min-width: 100%;
+  place-self: center;
+  text-align: center;
+  align-content: center;
+}
+
+/* no footer needed so far
+.App-footer {
+  min-width: 100%;
+  background-color: darkgrey;
+  color: black;
+}*/

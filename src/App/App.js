@@ -1,12 +1,17 @@
 import React from 'react';
-import './App.module.css';
+
+import Navigation from "../Navigation/Nav";
+
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hi</p>
-      </header>
+      <Navigation className="App-header"/>
+      <main className="App-content">
+        <h1>Hi</h1>
+      </main>
     </div>
   );
 }

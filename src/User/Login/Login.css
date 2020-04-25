@@ -1,0 +1,19 @@
+.login {
+  width: fit-content;
+  height: fit-content;
+  place-self: center;
+  text-align: center;
+}
+
+.register-redirect {
+  display: inline-flex;
+  margin-top: 5%;
+}
+
+.reg-link {
+  color: darkgrey;
+}
+
+.reg-link:hover {
+  color: darkgrey;
+}

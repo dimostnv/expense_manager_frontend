@@ -1,0 +1,6 @@
+.register {
+  width: fit-content;
+  height: fit-content;
+  place-self: center;
+  text-align: center;
+}

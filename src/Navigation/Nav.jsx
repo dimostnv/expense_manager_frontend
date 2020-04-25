@@ -1,8 +1,8 @@
 import React from "react";
 
-import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 
-import './Nav.css';
+import "./Nav.css";
 
 function Navigation() {
   return (

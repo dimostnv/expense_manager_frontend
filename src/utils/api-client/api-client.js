@@ -1,4 +1,12 @@
 const client = {
+  getLogout: function() {
+    return fetch("http://localhost:5000/users/logout", {
+      method: 'GET',
+      credentials: "include"
+    }).then((res) => {
+        return res.text();
+      });
+  },
   postLogin: function (userData) {
     return fetch("http://localhost:5000/users/login", {
       method: 'POST',

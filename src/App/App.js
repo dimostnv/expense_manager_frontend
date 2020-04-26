@@ -11,6 +11,7 @@ import "./App.css";
 
 import cookieParser from "../utils/cookie-parser/cookie-parser";
 import Greeter from "../Shared/Greeter/Greeter";
+import ExpensesForm from "../Expenses/Add-expenses/Add-expenses";
 
 function mapStateToProps(state) {
   return {
@@ -28,10 +29,10 @@ function App() {
 
   return (
     <div className="App">
-      {IsLogged && <Navigation user={user} logout={setIsLogged} className="App-header"/>}
-      {!IsLogged && <div className="App-header"/>}
-      <main className="App-content">
-        <BrowserRouter>
+      <BrowserRouter>
+        {IsLogged && <Navigation user={user} logout={setIsLogged} className="App-header"/>}
+        {!IsLogged && <div className="App-header"/>}
+        <main className="App-content">
           {!IsLogged &&
           <React.Fragment>
             <Route path="/" exact render={() =>
@@ -43,10 +44,12 @@ function App() {
           </React.Fragment>}
           {IsLogged &&
           <React.Fragment>
-            <Route path="/" exact render={() => <Greeter user={user}/>} />
+            <Route path="/" exact render={() => <Greeter user={user}/>}/>
+            <Route path="/my-expenses" render={() => <h1>hi</h1>}/>
+            <Route path="/add-expenses" render={() => <ExpensesForm/>}/>
           </React.Fragment>}
-        </BrowserRouter>
-      </main>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }

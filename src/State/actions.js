@@ -14,10 +14,16 @@ export function getExpenses(expenses) {
   }
 }
 
+export function pushExpense(expense) {
+  return {
+    type: actionTypes.PUSH_EXPENSE,
+    payload: expense
+  }
+}
+
 export function getExpenseCategories(categories) {
   return {
     type: actionTypes.GET_EXPENSE_CATEGORIES,
     payload: categories
   }
 }
-

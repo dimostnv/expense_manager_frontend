@@ -1,10 +1,8 @@
-import {combineReducers} from "redux";
-
 import actionTypes from "./action-types";
 
 const initialState = {
   user: '',
-  expenses: false,
+  expenses: [],
   categories: false
 };
 
@@ -14,6 +12,8 @@ function expenseManager(state = initialState, action) {
       return {...state, user: action.payload};
     case actionTypes.GET_EXPENSES:
       return {...state, expenses: action.payload};
+    case actionTypes.PUSH_EXPENSE:
+      return {...state, expenses: [...state.expenses, action.payload]};
     case actionTypes.GET_EXPENSE_CATEGORIES:
       return {...state, categories: action.payload};
     default:

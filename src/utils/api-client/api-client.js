@@ -16,10 +16,9 @@ const client = {
         'content-type': 'application/json'
       }
     }).then((userInfo) => {
-      console.log(userInfo);
       return userInfo.json();
     }).catch((err) => {
-      return err.message();
+      return err.message;
     });
   },
   postRegister: function (userData) {
@@ -34,6 +33,20 @@ const client = {
       return userInfo.json();
     }).catch((err) => {
       return err.message();
+    });
+  },
+  addExpense: function (expenseData) {
+    return fetch("http://localhost:5000/expenses/add", {
+      method: 'POST',
+      body: JSON.stringify(expenseData),
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then((expense) => {
+      return expense.json();
+    }).catch((err) => {
+      return err.message;
     });
   }
 };

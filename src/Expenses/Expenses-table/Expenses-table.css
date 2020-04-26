@@ -1,0 +1,12 @@
+.expenses-table {
+  min-width: 50%;
+  max-height: 75%;
+  display: inherit;
+  place-self: center;
+  background-color: darkgrey;
+  overflow-y: scroll;
+}
+
+.expenses-table::-webkit-scrollbar {
+  display: none;
+}

@@ -5,13 +5,14 @@ import {connect, useSelector, useStore} from 'react-redux';
 import Navigation from "../Navigation/Nav";
 import Login from "../User/Login/Login";
 import Register from "../User/Register/Register";
+import Greeter from "../Shared/Greeter/Greeter";
+import ExpensesForm from "../Expenses/Add-expenses/Add-expenses";
+import ExpensesTable from "../Expenses/Expenses-table/Expenses-table";
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css";
 
 import cookieParser from "../utils/cookie-parser/cookie-parser";
-import Greeter from "../Shared/Greeter/Greeter";
-import ExpensesForm from "../Expenses/Add-expenses/Add-expenses";
 
 function mapStateToProps(state) {
   return {
@@ -45,7 +46,7 @@ function App() {
           {IsLogged &&
           <React.Fragment>
             <Route path="/" exact render={() => <Greeter user={user}/>}/>
-            <Route path="/my-expenses" render={() => <h1>hi</h1>}/>
+            <Route path="/my-expenses" render={() => <ExpensesTable/>}/>
             <Route path="/add-expenses" render={() => <ExpensesForm/>}/>
           </React.Fragment>}
         </main>

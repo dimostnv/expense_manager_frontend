@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Form, Button} from "react-bootstrap";
+import {Card, Form, Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
@@ -34,32 +34,36 @@ function Login(props) {
     event.preventDefault();
 
     const userData = {username, password};
-      client.postLogin(userData).then((data) => {
-        const cookies = cookieParser(document.cookie);
-        const credentials = cookies['auth_cookie'];
-        props.setLogin.setCookies(credentials);
-        props.setLogin.setIsLogged(credentials);
-        props.submitForm(data);
-      });
+    client.postLogin(userData).then((data) => {
+      const cookies = cookieParser(document.cookie);
+      const credentials = cookies['auth_cookie'];
+      props.setLogin.setCookies(credentials);
+      props.setLogin.setIsLogged(credentials);
+      props.submitForm(data);
+    });
   }
 
   return (
     <div className="login">
-      <h2>Login</h2>
-      <Form>
-        <Form.Group controlId="formGroupEmail">
-          <Form.Control name="username" type="text" placeholder="Username"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Form.Group controlId="formGroupPassword">
-          <Form.Control name="password" type="password" placeholder="Password"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Button variant="light" type="submit" onClick={handleFormSubmit}>Login</Button><br/>
-        <div className="register-redirect">
-          <p>Not a user yet? <Link to="/register" className="reg-link">Register now</Link></p>
-        </div>
-      </Form>
+      <Card>
+        <Card.Header>Login</Card.Header>
+        <Card.Body>
+          <Form>
+            <Form.Group controlId="formGroupEmail">
+              <Form.Control name="username" type="text" placeholder="Username"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Control name="password" type="password" placeholder="Password"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Button variant="info" type="submit" onClick={handleFormSubmit}>Login</Button><br/>
+            <div className="register-redirect">
+              <p>Not a user yet? <Link to="/register" className="reg-link">Register now</Link></p>
+            </div>
+          </Form>
+        </Card.Body>
+      </Card>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Button, Form} from "react-bootstrap";
+import {Card, Button, Form} from "react-bootstrap";
 import {useHistory} from "react-router-dom";
 import {connect} from "react-redux";
 
@@ -33,9 +33,15 @@ function Register(props) {
 
     // eslint-disable-next-line default-case
     switch (name) {
-      case 'username': setUsername(value); break;
-      case 'email': setEmail(value); break;
-      case 'password': setPassword(value); break;
+      case 'username':
+        setUsername(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
     }
   }
 
@@ -56,22 +62,26 @@ function Register(props) {
 
   return (
     <div className="register">
-      <h2>Register</h2>
-      <Form>
-        <Form.Group controlId="formGroupEmail">
-          <Form.Control type="text" name='username' placeholder="Username"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Form.Group controlId="formGroupEmail">
-          <Form.Control type="email" name='email' placeholder="Email"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Form.Group controlId="formGroupPassword">
-          <Form.Control type="password" name='password' placeholder="Password"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Button variant="light" type="submit" onClick={handleFormSubmit}>Register</Button><br/>
-      </Form>
+      <Card>
+        <Card.Header>Register</Card.Header>
+        <Card.Body>
+          <Form>
+            <Form.Group controlId="formGroupEmail">
+              <Form.Control type="text" name='username' placeholder="Username"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Form.Group controlId="formGroupEmail">
+              <Form.Control type="email" name='email' placeholder="Email"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Control type="password" name='password' placeholder="Password"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Button variant="info" type="submit" onClick={handleFormSubmit}>Register</Button><br/>
+          </Form>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

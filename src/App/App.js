@@ -7,6 +7,7 @@ import Login from "../User/Login/Login";
 import Register from "../User/Register/Register";
 import Greeter from "../Shared/Greeter/Greeter";
 import ExpensesForm from "../Expenses/Add-expenses/Add-expenses";
+import YearGroup from "../Expenses/Year-group/Year-group";
 import ExpensesTable from "../Expenses/Expenses-table/Expenses-table";
 
 import "bootstrap/dist/css/bootstrap.min.css"

@@ -21,6 +21,13 @@ export function pushExpense(expense) {
   }
 }
 
+export function updateExpensesFilter(filter) {
+  return {
+    type: actionTypes.UPDATE_EXPENSES_FILTER,
+    payload: filter
+  }
+}
+
 export function getExpenseCategories(categories) {
   return {
     type: actionTypes.GET_EXPENSE_CATEGORIES,

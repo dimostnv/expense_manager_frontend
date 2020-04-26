@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Nav, Navbar, Dropdown, DropdownButton} from "react-bootstrap";
 import {Link, useHistory} from "react-router-dom";
 
 import client from "../utils/api-client/api-client";
@@ -28,11 +28,12 @@ function Navigation(props) {
         <Nav.Link as={Link} to="/add-expenses">Add expenses</Nav.Link>
         <Nav.Link as={Link} to="#pricing">Balance</Nav.Link>
       </Nav>
-      <NavDropdown id="Profile" className="justify-content-end myProfile" title={props.user}>
-        <NavDropdown.Item>Statistics</NavDropdown.Item>
-        <NavDropdown.Item>Settings</NavDropdown.Item>
-        <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
-      </NavDropdown>
+      <DropdownButton id="Profile" className="justify-content-end myProfile"
+                      variant="info" drop="left" title={props.user}>
+        <Dropdown.Item>Statistics</Dropdown.Item>
+        <Dropdown.Item>Settings</Dropdown.Item>
+        <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+      </DropdownButton>
     </Navbar>
   )
 }

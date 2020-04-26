@@ -1,12 +1,12 @@
 .Navigation {
-  background-color: darkgrey;
+  background-color: white;
 }
 
 .myProfile > div {
-  background-color: darkgrey;
+  background-color: lightgrey;
 }
 
 .myProfile > div > a:hover {
-  color: white;
-  background-color: #225b63;
+  color: black;
+  background-color: lightsteelblue;
 }

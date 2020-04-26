@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Button, Form} from "react-bootstrap";
+import {Card, Button, Form} from "react-bootstrap";
 import {useHistory} from "react-router-dom";
 import {useSelector, connect} from "react-redux";
 
@@ -61,29 +61,33 @@ function ExpensesForm(props) {
 
   return (
     <div className='expenses-form'>
-      <h2>Add expense</h2>
-      <Form>
-        <Form.Group controlId="formGroupEmail">
-          <Form.Control name="title" type="text" placeholder="Title"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Form.Group controlId="formGroupPassword">
-          <Form.Control name="description" type="text" placeholder="Description"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Form.Group controlId="formGroupPassword">
-          <Form.Control as="select" name="category" value="Category"
-                        onChange={handleInputChange}>
-            <option>Category</option>
-            <option>...</option>
-          </Form.Control>
-        </Form.Group>
-        <Form.Group controlId="formGroupPassword">
-          <Form.Control name="amount" type="number" placeholder="Amount"
-                        onChange={handleInputChange}/>
-        </Form.Group>
-        <Button variant="light" type="submit" onClick={handleFormSubmit}>Add</Button><br/>
-      </Form>
+      <Card>
+        <Card.Header>Add expense</Card.Header>
+        <Card.Body>
+          <Form>
+            <Form.Group controlId="formGroupEmail">
+              <Form.Control name="title" type="text" placeholder="Title"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Control name="description" type="text" placeholder="Description"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Control as="select" name="category" value="Category"
+                            onChange={handleInputChange}>
+                <option>Category</option>
+                <option>...</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Control name="amount" type="number" placeholder="Amount"
+                            onChange={handleInputChange}/>
+            </Form.Group>
+            <Button variant="info" type="submit" onClick={handleFormSubmit}>Add</Button><br/>
+          </Form>
+        </Card.Body>
+      </Card>
     </div>
   )
 }

@@ -1,0 +1,11 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  place-self: center;
+  margin-bottom: 2%;
+}
+
+.button-group {
+  margin: 0.1%;
+}

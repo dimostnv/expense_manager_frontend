@@ -8,9 +8,8 @@
   grid-auto-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   overflow-y: scroll;
-  background-color: #225b63;
+  background-color: lightgrey;
   font-family: "Helvetica", sans-serif;
-  color: darkgrey;
 }
 
 .App::-webkit-scrollbar {
@@ -39,6 +38,13 @@
 .user-form {
   grid-column-start: 2;
   grid-column-end: 2;
+}
+
+.container {
+  display: grid;
+  padding: 1%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 /* no footer needed so far
